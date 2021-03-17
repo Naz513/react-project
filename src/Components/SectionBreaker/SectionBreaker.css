@@ -1,0 +1,10 @@
+.hr {
+    background: rgba(255, 255, 255, 0.2);
+    height: 1px;
+    margin-bottom: 3%;
+}
+
+h1 {
+    padding-top: 5%;
+    padding-bottom: 2%;
+}
