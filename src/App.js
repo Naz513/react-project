@@ -3,6 +3,7 @@ import './App.css';
 
 import Header from './Components/Header/Header';
 import Section from './Components/SectionBreaker/SectionBreaker';
+import FeaturedProjects from './Components/FeaturedProjects/FeaturedProjects';
 
 class App extends Component {
   state = {
@@ -16,7 +17,23 @@ class App extends Component {
     Section: {
       hello: '🤝 Hello!',
       featuredProjects: '🧑‍💻 Featured Projects'
-    }
+    },
+    FeaturedProject: [
+      {
+        date: 'Sep 27th, 2020',
+        name: 'Event-driven COVID-19 ETL Process',
+        description: 'Developed an automated serverless daily-run ETL process for COVID-19 Data using a collection of AWS Services as well as a dashboard that consumes the data. Used Python and Pandas for Data Manipulation and developed entire project using The Serverless Framework.',
+        projectLink: 'etlproject',
+        image: 'cover'
+      },
+      {
+        date: 'Aug 28th, 2020',
+        name: 'Serverless Resume Website Using Cloudformation',
+        description: 'Developed a serverless resume website that keeps track of the number of visitors accessing the page, using AWS CloudFormation. This project incorporates several AWS services such as Lambda Function, DynamoDB, API Gateway, and more.',
+        projectLink: 'resumeproject',
+        image: 'network'
+      }
+    ]
   }
 
   render() {
@@ -31,6 +48,19 @@ class App extends Component {
           content={this.state.Header.content}
         />
         <Section content={this.state.Section.featuredProjects} />
+        <FeaturedProjects
+          date={this.state.FeaturedProject[0].date}
+          name={this.state.FeaturedProject[0].name}
+          description={this.state.FeaturedProject[0].description}
+          image={this.state.FeaturedProject[0].image}
+        />
+        <FeaturedProjects
+          date={this.state.FeaturedProject[1].date}
+          name={this.state.FeaturedProject[1].name}
+          description={this.state.FeaturedProject[1].description}
+          image={this.state.FeaturedProject[1].image}
+        />
+        <Section />
       </div>
     );
   }
